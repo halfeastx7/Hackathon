@@ -1,0 +1,129 @@
+.homepage {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+}
+
+.hero-section {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero-section:hover .hero-image {
+    transform: scale(1.1);
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .hero-image {
+        height: 300px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-image {
+        height: 250px;
+    }
+
+    .hero-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Gaya Pop-Up yang Menarik dan Simple */
+.search-results {
+    position: absolute;
+    top: 50px; /* Tambahkan jarak sedikit dari atas */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border-radius: 12px; /* Sudut yang lebih bulat */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    padding: 20px;
+    z-index: 1000;
+    animation: slideDown 0.4s ease-in-out; /* Animasi slide yang lembut */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px); /* Mulakan dari sedikit di atas */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0); /* Turun ke posisi akhir */
+    }
+}
+
+.animated-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.5s forwards;
+    animation-delay: calc(0.1s * var(--delay));
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
